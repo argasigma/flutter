@@ -9,36 +9,36 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-  TextEditingController txtUsername = TextEditingController();
-  TextEditingController txtPassword = TextEditingController();
+  final TextEditingController txtUsername = TextEditingController();
+  final TextEditingController txtPassword = TextEditingController();
   String statusLogin = "";
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Login Page")),
+      appBar: AppBar(title: const Text("Login Page")),
       body: Column(
         children: [
-          // kita isi textfield username, password, dan button
           Text(
-            "Welcome to Application " + statusLogin.toString(),
-            style: TextStyle(
+            "Welcome to Application $statusLogin",
+            style: const TextStyle(
               fontSize: 20,
-              color: const Color.fromARGB(255, 62, 4, 223),
+              color: Color.fromARGB(255, 62, 4, 223),
               fontStyle: FontStyle.italic,
             ),
           ),
           Container(
-            margin: EdgeInsets.all(10),
+            margin: const EdgeInsets.all(10),
             child: CustomTextfield(
               txtController: txtUsername,
               myHint: "input username",
             ),
           ),
           Container(
-            margin: EdgeInsets.all(10),
+            margin: const EdgeInsets.all(10),
             child: TextField(
               controller: txtPassword,
-              decoration: InputDecoration(hint: Text("Input password")),
+              decoration: const InputDecoration(hint: Text("Input password")),
               obscureText: true,
             ),
           ),
@@ -48,20 +48,18 @@ class _LoginPageState extends State<LoginPage> {
               ElevatedButton(
                 onPressed: () {
                   setState(() {
-                    String username = txtUsername.text.toString();
-                    String password = txtPassword.text.toString();
+                    final username = txtUsername.text.trim();
+                    final password = txtPassword.text.trim();
                     if (username == "admin" && password == "admin") {
-                      print("sukses login");
                       statusLogin = "admin";
                     } else {
-                      print("gagal login");
                       statusLogin = "failed";
                     }
                   });
                 },
-                child: Text("Login"),
+                child: const Text("Login"),
               ),
-              ElevatedButton(onPressed: () {}, child: Text("Register")),
+              ElevatedButton(onPressed: () {}, child: const Text("Register")),
             ],
           ),
         ],

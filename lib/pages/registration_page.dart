@@ -21,7 +21,7 @@ class RegistrationPage extends StatelessWidget {
               // argument untuk kirim data
               // get off
               Get.toNamed(
-                Routes.confirm_registration,
+                Routes.confirmRegistration,
                 arguments: {
                   'name': txtNama.text.toString(),
                   'jenis_kelamin': "laki laki", // dari widget kalian,

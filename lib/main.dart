@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:fluttertest/login_page.dart';
-import 'package:fluttertest/pages/kalkulator_page.dart';
 import 'package:get/get_navigation/get_navigation.dart';
 import 'package:fluttertest/routes.dart';
-import 'package:fluttertest/pages/registration_page.dart';
 
 void main() {
   runApp(const MyApp());
